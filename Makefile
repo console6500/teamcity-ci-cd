@@ -2,7 +2,7 @@ PROFILE=lambda
 FUNCTION=
 CODE=$(shell ls *.py)
 
-hello:
+hello99:
 	@echo "Here are the targets for this Makefile:"
 	@echo "  requirements  - install the project requirements"
 	@echo "  lint          - run linters on the code"
