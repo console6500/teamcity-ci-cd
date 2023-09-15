@@ -41,25 +41,30 @@ def handler(event, context):
                     cursor: pointer;
                 }}
                 table {{
-  width: 50%; /* Adjust the width as needed */
-  border-collapse: collapse;
-  margin-bottom: 20px; /* Adds some space below the table */
-}}
+                width: 50%;
+                border-collapse: collapse;
+                margin-bottom: 20px;
+                }}
 
-td, th {{
-  padding: 10px;
-  border: 1px solid #ccc;
-  text-align: left;
-}}
+                td, th {{
+                padding: 10px;
+                border: 1px solid #ccc;
+                text-align: left;
+                }}
 
-th {{
-  background-color: #f2f2f2; /* Gray background for header cells */
-  font-weight: bold;
-}}
+                th {{
+                background-color: #f2f2f2;
+                font-weight: bold;
+                }}
 
-td b {{
-  font-weight: normal; /* Remove bold from the <b> elements within cells */
-}}
+                td:first-child, th:first-child {{
+                font-weight: bold;
+                background-color: lightgreen;
+                }}
+
+                td b {{
+                font-weight: normal;
+                }}
             </style>
         </head>
         <body>
