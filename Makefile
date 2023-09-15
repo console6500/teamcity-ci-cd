@@ -29,6 +29,14 @@ requirements:
 	pip install -U pip
 	pip install --requirement requirements.txt
 
+check:
+	set
+	for i in zip python pip pylint flake8 aws;
+	do
+		echo "###### ${i}"
+		${i} --version
+	done
+	
 lint:
 	pylint --exit-zero --disable=R,C $(CODE)
 	flake8 --exit-zero $(CODE)
