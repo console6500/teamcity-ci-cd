@@ -38,14 +38,40 @@ def handler(event, context):
                     border-radius: 5px;
                     cursor: pointer;
                 }}
+                table {(
+  width: 50%; /* Adjust the width as needed */
+  border-collapse: collapse;
+  margin-bottom: 20px; /* Adds some space below the table */
+}}
+
+td, th {{
+  padding: 10px;
+  border: 1px solid #ccc;
+  text-align: left;
+}}
+
+th {{
+  background-color: #f2f2f2; /* Gray background for header cells */
+  font-weight: bold;
+}}
+
+td b {{
+  font-weight: normal; /* Remove bold from the <b> elements within cells */
+}}
             </style>
         </head>
         <body>
             <h1>The Sample Application</h1>
-            <ul>
-                <li>Environment: {environment}</li>
-                <li>Deploued By: {platform}</li>
-            </ul>
+            <table>
+              <tr>
+                <td>Environment:</td>
+                <td><b>{environment}</b></td>
+              </tr>
+              <tr>
+                <td>CI/CD Tool:</td>
+                <td><b>{platform}</b></td>
+              </tr>
+            </table>
 
             <h2>GET /</h2>
             <p>Returns The documentation page for the application.</p>
