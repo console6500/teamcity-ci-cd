@@ -3,6 +3,7 @@ def handler(event, context):
     import json
 
     environment = os.environ.get("ENVIRONMENT", "DEFAULT")
+    platform = os.environ.get("PLATFORM", "DEFAULT")
 
     with open("data.json", "r") as f:
         data = json.load(f)
@@ -40,7 +41,11 @@ def handler(event, context):
             </style>
         </head>
         <body>
-            <h1>The Sample Application - {environment}</h1>
+            <h1>The Sample Application</h1>
+            <ul>
+                <li>Environment: {environment}</li>
+                <li>Deploued By: {platform}</li>
+            </ul>
 
             <h2>GET /</h2>
             <p>Returns The documentation page for the application.</p>
