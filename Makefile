@@ -2,8 +2,8 @@ FUNCTION=
 PLATFORM=
 ENVIRONMENT=
 URL=
-VERSION=
-BUILD_ID=
+VERSION=undefined
+BUILD_ID=undefined
 
 CODE=$(shell ls *.py)
 
