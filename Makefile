@@ -48,8 +48,8 @@ deploy:
 	
 	aws lambda update-function-configuration \
 		--function-name="$(FUNCTION)" \
-	    	--environment=\"{\"Variables\": {\"PLATFORM\": \"$(PLATFORM)\"}, {\"ENVIRONMENT\": \"$(ENVIRONMENT)\"}}\"
-	
+		--environment Variables="{\"PLATFORM\":\"$(PLATFORM)\",\"ENVIRONMENT\":\"$(ENVIRONMENT)\"}"
+
 	aws lambda wait function-updated \
 		--function-name="$(FUNCTION)"
 	
