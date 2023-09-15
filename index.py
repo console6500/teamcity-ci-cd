@@ -38,7 +38,7 @@ def handler(event, context):
                     border-radius: 5px;
                     cursor: pointer;
                 }}
-                table {(
+                table {{
   width: 50%; /* Adjust the width as needed */
   border-collapse: collapse;
   margin-bottom: 20px; /* Adds some space below the table */
