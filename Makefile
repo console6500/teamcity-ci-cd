@@ -63,7 +63,7 @@ deploy:
 		--function-name="$(FUNCTION)"
 
 testdeployment:
-	curl -s $(URL) | grep Cyclones
+	curl -s $(URL)/1 | grep Cyclones
 
 clean:
 	rm -vf lambda.zip
