@@ -2,10 +2,10 @@ def handler(event, context):
     import os
     import json
 
-    environment = os.environ.get("ENVIRONMENT", "DEFAULT")
-    platform = os.environ.get("PLATFORM", "DEFAULT")
-    version = os.environ.get("VERSION", "DEFAULT")
-    build_id = os.environ.get("BUILD_ID", "DEFAULT")
+    environment = os.environ.get("ENVIRONMENT", "undefined")
+    platform = os.environ.get("PLATFORM", "undefined")
+    version = os.environ.get("VERSION", "undefined")
+    build_id = os.environ.get("BUILD_ID", "undefined")
 
     with open("data.json", "r") as f:
         data = json.load(f)
