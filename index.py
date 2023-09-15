@@ -75,7 +75,7 @@ def handler(event, context):
                 <td><b>{environment}</b></td>
               </tr>
               <tr>
-                <td>Code Version:</td>
+                <td>Version:</td>
                 <td><b>{version}</b></td>
               </tr>
               <tr>
