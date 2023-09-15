@@ -2,6 +2,8 @@ FUNCTION=
 PLATFORM=
 ENVIRONMENT=
 URL=
+VERSION=
+BUILD_ID=
 
 CODE=$(shell ls *.py)
 
@@ -58,7 +60,7 @@ deploy:
 	
 	aws lambda update-function-configuration \
 		--function-name="$(FUNCTION)" \
-		--environment "Variables={PLATFORM=$(PLATFORM),ENVIRONMENT=$(ENVIRONMENT)}"
+		--environment "Variables={PLATFORM=$(PLATFORM),ENVIRONMENT=$(ENVIRONMENT),VERSION=$(VERSION),BUILD_ID=$(BUILD_ID)}"
 
 	aws lambda wait function-updated \
 		--function-name="$(FUNCTION)"
