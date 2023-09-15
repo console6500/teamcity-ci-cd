@@ -31,7 +31,11 @@ requirements:
 
 check:
 	set
-	for i in zip python pip pylint flake8 aws; do echo "###### ${i}"; ${i} --version; done
+	zip --version
+	python --version
+	pylint --version
+	flake8 --version
+	aws --version
 	
 lint:
 	pylint --exit-zero --disable=R,C $(CODE)
