@@ -1,5 +1,6 @@
-PROFILE=lambda
 FUNCTION=
+PLATFORM=
+ENVIRONMENT=
 CODE=$(shell ls *.py)
 
 hello99:
@@ -40,10 +41,24 @@ build:
 	zip lambda.zip index.py data.json
 
 deploy:
+	aws sts get-caller-identity
+	
+	aws lambda wait function-active \
+		--function-name="$(FUNCTION)"
+	
+	aws lambda update-function-configuration \
+		--function-name="$(FUNCTION)" \
+	    	--environment="{\"Variables\": {\"PLATFORM\": \"$(PLATFORM)\"}, {\"ENVIRONMENT\": \"$(ENVIRONMENT)\"}}"
+	
+	aws lambda wait function-updated \
+		--function-name="$(FUNCTION)"
+	
 	aws lambda update-function-code \
-		--zip-file=fileb://lambda.zip \
-		--profile=$(PROFILE) \
-		--function-name=$(FUNCTION)
+		--function-name="$(FUNCTION)" \
+	 	--zip-file=fileb://lambda.zip
+	    
+	aws lambda wait function-updated \
+		--function-name="$(FUNCTION)"
 
 clean:
 	rm -vf lambda.zip
