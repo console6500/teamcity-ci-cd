@@ -1,6 +1,8 @@
 FUNCTION=
 PLATFORM=
 ENVIRONMENT=
+URL=
+
 CODE=$(shell ls *.py)
 
 hello99:
@@ -59,6 +61,9 @@ deploy:
 	    
 	aws lambda wait function-updated \
 		--function-name="$(FUNCTION)"
+
+testdeployment:
+	curl -s $(URL) | grep Cyclones
 
 clean:
 	rm -vf lambda.zip
