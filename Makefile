@@ -1,9 +1,9 @@
-FUNCTION=
-PLATFORM=
-ENVIRONMENT=
-URL=
+FUNCTION=undefined
+PLATFORM=undefined
+ENVIRONMENT=undefined
+URL=undefined
 VERSION=undefined
-BUILD_ID=undefined
+BUILD_NUMBER=undefined
 
 CODE=$(shell ls *.py)
 
@@ -19,7 +19,7 @@ hello99:
 	@echo "  all           - clean, lint, black, test, build, and deploy"
 	@echo
 	@echo
-	@echo "You must set the PROFILE and FUNCTION variables to use the"
+	@echo "TODO: UPDATE THIS---->You must set the PROFILE and FUNCTION variables to use the"
 	@echo "deploy target.  For example:"
 	@echo
 	@echo "  make PROFILE=foo FUNCTION=bar deploy"
@@ -60,7 +60,7 @@ deploy:
 	
 	aws lambda update-function-configuration \
 		--function-name="$(FUNCTION)" \
-		--environment "Variables={PLATFORM=$(PLATFORM),ENVIRONMENT=$(ENVIRONMENT),VERSION=$(VERSION),BUILD_ID=$(BUILD_ID)}"
+		--environment "Variables={PLATFORM=$(PLATFORM),ENVIRONMENT=$(ENVIRONMENT),VERSION=$(VERSION),BUILD_NUMBER=$(BUILD_NUMBER)}"
 
 	aws lambda wait function-updated \
 		--function-name="$(FUNCTION)"

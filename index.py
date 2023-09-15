@@ -5,7 +5,7 @@ def handler(event, context):
     environment = os.environ.get("ENVIRONMENT", "undefined")
     platform = os.environ.get("PLATFORM", "undefined")
     version = os.environ.get("VERSION", "undefined")
-    build_id = os.environ.get("BUILD_ID", "undefined")
+    build_number = os.environ.get("BUILD_NUMBER", "undefined")
 
     with open("data.json", "r") as f:
         data = json.load(f)
@@ -70,16 +70,16 @@ td b {{
                 <td><b>{environment}</b></td>
               </tr>
               <tr>
-                <td>Platform:</td>
-                <td><b>{platform}</b></td>
-              </tr>
-              <tr>
                 <td>Code Version:</td>
                 <td><b>{version}</b></td>
               </tr>
               <tr>
-                <td>Build ID</td>
-                <td><b>{build_id}</b></td>
+                <td>Platform:</td>
+                <td><b>{platform}</b></td>
+              </tr>
+              <tr>
+                <td>Build Number</td>
+                <td><b>{build_number}</b></td>
               </tr>
             </table>
 
