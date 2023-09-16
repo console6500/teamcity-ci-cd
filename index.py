@@ -32,7 +32,7 @@ def handler(event, context):
                     margin-bottom: 16px;
                 }}
                 button {{
-                    background-color: green;
+                    background-color: #66BB6A;
                     color: white;
                     padding: 10px 20px;
                     font-size: 16px;
