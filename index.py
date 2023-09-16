@@ -59,7 +59,7 @@ def handler(event, context):
 
                 td:first-child, th:first-child {{
                 font-weight: bold;
-                background-color: lightgreen;
+                background-color: #26C6DA;
                 }}
 
                 td b {{
@@ -89,7 +89,7 @@ def handler(event, context):
             </table>
 
             <h2>GET /</h2>
-            <p>Returns The documentation page for the application.</p>
+            <p>Returns the documentation page for the application.</p>
             <p><button onclick="window.open('/')">Try it</button></p>
 
             <h2>GET /data</h2>
