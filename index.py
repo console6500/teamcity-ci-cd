@@ -32,8 +32,9 @@ def handler(event, context):
                     margin-bottom: 16px;
                 }}
                 button {{
-                    background-color: #66BB6A;
+                    background-color: green;
                     color: white;
+                    font-weight: bold;
                     padding: 10px 20px;
                     font-size: 16px;
                     border: none;
@@ -59,7 +60,7 @@ def handler(event, context):
 
                 td:first-child, th:first-child {{
                 font-weight: bold;
-                background-color: #26C6DA;
+                background-color: #26A69A ;
                 }}
 
                 td b {{
